@@ -1,0 +1,37 @@
+#{extends 'main.html' /}
+
+
+
+<h1> Bienvenido a Grupos</h1>
+
+<a href="/grupos/nuevo" class="btn btn-info"> Nuevo</a>
+<br>
+
+<!-- <h1> ${saludo}</h1> -->
+<br />
+
+#{if grupos}
+
+		#{list items:grupos, as:'grupo'}
+		
+			<div class="well" > 
+				
+				ID: ${grupo.id}<br> 
+				Nombre: ${grupo.nombre}<br> 
+				Descripcion:  ${grupo.descripcion}<br> 
+			</div>
+		<br> 
+		<br> 
+		
+		
+		<a href="@{Grupos.eliminar(grupo.id)}" class="btn btn-danger" onclick="return confirm('Esta seguro de eliminar')"> Eliminar</a>
+		<a href="@{Grupos.modificar(grupo.id)}" class="btn btn-info" > Actualizar</a>
+		#{/list}
+
+
+#{/if}
+#{else}
+	<div class="alert alert-danger">AUN NO TIENE GRUPOS</div>
+
+#{/else}
+

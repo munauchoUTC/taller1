@@ -1,0 +1,18 @@
+#{extends 'main.html' /}
+#{set title:'nuevo.html' /}
+
+<h1> NUEVO GRUPO</h1>
+
+<form action="@{Grupos.guardar}"  method="POST" >
+		<b> Nombre:</b>
+		<input type="text" name="nombre" class="form-control" required placeholder="Ingrese nombre" >
+		<b> Descripcion:</b>
+		<input type="text" name="descripcion" class="form-control" required placeholder="ingrese una descripcion">
+		<br>
+		<input type="submit"  value="guardar"  class="btn btn-primary btn-block" name="">
+
+</form>
+
+
+
+

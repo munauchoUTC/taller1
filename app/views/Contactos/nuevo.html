@@ -1,0 +1,27 @@
+#{extends 'main.html' /}
+#{set title:'nuevo.html' /}
+
+<h1> NUEVO CONTACTO</h1>
+
+
+<form action="@{Contactos.guardarContacto}"  method="POST" >
+		<b> Nombre:</b>
+		<input type="text" pattern="[a-zA-ZáÁ]"  title="Debe ingresar solo caracteres" name="nombre" class="form-control" required placeholder="Ingrese su  nombre" >
+		<b> Numero:</b>
+		<input type="text" pattern="[0-9]{10}"  title="Debe ingresar 10 digitos" name="numero" class="form-control" required placeholder="ingrese su numero">
+		<br>
+		
+		<b> Grupo:</b>
+		
+		<select name="idGrupo" required class="form-control"> 
+		
+		<option value=" " >Elija</option><br><br>
+			#{list items:grupos, as:'grupo'}
+			<option value="${grupo.id}">${grupo.nombre}</option>
+			#{/list}
+		</select>
+		
+<!-- 		//boton guardar  -->
+		<input type="submit"  value="guardar"  class="btn btn-primary btn-block" name="">
+
+</form>

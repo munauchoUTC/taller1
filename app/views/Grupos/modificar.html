@@ -1,0 +1,24 @@
+#{extends 'main.html' /}
+#{set title:'modificar.html' /}
+
+<h1> MODIFICACION</h1>
+
+<form action="@{Grupos.actualizar}"  method="POST" >
+
+<input type="hidden" name="id"  value="${grupoModificar.id}"  >
+		
+		<b> Nombre:</b><br>
+		<input type="text" name="nombre"  value="${grupoModificar.nombre}" class="form-control" 
+		required placeholder="Ingrese nombre" >
+		
+		
+		
+		<b> Descripcion:</b>
+		<input type="text" name="descripcion"  value="${grupoModificar.descripcion}"  class="form-control"
+		 required placeholder="ingrese una descripcion">
+		<br>
+		
+		
+		<input type="submit"  value="actualizar"  class="btn btn-primary btn-block">
+
+</form>
